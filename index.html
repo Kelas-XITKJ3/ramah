@@ -1,0 +1,1488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TKJ 3</title>
+</head>
+<body>
+    <style>
+               * {
+font-family: Arial, Helvetica, sans-serif;
+line-height: 20px;
+font-size: 15px;
+}
+html {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+body {
+    margin: 0px;
+    padding: 0px;
+}
+.layar-dalam{
+    width: 1000px;
+    margin: auto;
+}
+.layar-penuh{
+    width: 100%;
+}
+nav {
+    z-index: 100;
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    border-bottom: 1px solid #b1b1b1;
+    line-height: 60px;
+    width: 100%;
+    transition: background-color 0.5s ease;
+}
+nav.putih {
+    background-color: #fff;
+}
+nav .logo{
+float: left;
+position: relative;
+line-height: 55px;
+text-align: center;
+}
+nav .logo img {
+    vertical-align: middle;
+    width: 120px;
+}
+
+nav .menu {
+    float: right;
+    height: 60px;
+    max-width: 600px;
+}
+
+nav .menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0px;
+    display: flex;
+}
+
+nav .menu ul li{
+    list-style-type: none;
+    float: left;
+    line-height: 100px;
+}
+
+nav ul li a{
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+}
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* pengaturan header */
+header{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 2;
+}
+header video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+header .intro{
+    z-index: 100;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    top: 50%;
+}
+header .intro h2 {
+    font-size: 200%;
+    margin: 0;
+    padding: 10px;
+}
+header .intro h1 {
+    color: #fff;
+    font-size: 150%;
+    padding: 10px;
+}
+.tombol {
+    background-color:#c86b85;
+    height: 40px;
+    line-height: 42px;
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    padding: 0px 20px 0px 20px;
+    font-size: 15px;
+    border-radius: 4px;
+}
+header .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 50%;
+    z-index: -1;
+}
+.tombol-menu {
+    position: absolute;
+    top: 1.7rem;
+    right: 1rem;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+}
+.tombol-menu .garis{
+    height: 3px;
+    background-color: #fff;
+}
+section{
+    padding: 50px 0px 50px 0px;
+}
+section h3{
+    font-size: 30px;
+    text-align: center;
+}
+section h3::after{
+    content: "";
+    border-bottom: 5px solid #c86b85;
+    width: 52px;
+    display: block;
+    margin: 20px auto;
+}
+#aboutus,
+#murid,
+#siwa {
+    text-align: center;
+}
+section p.ringkasan{
+    font-style: italic;
+    font-size: 18px;
+    color: #ababab;
+    text-align: center;
+}
+section .konten-isi p{
+    font-style: normal;
+}
+nav.putih{
+    background-color: #fff;
+}
+nav.putih .tombol-menu .garis {
+    background-color: #333;
+}
+nav.putih ul li a {
+    color: #333;
+}
+nav .logo img.hitam {
+    display: none;
+}
+section.abuabu{
+    background-color: #f5f6f6;
+}
+.support,
+.murid {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.support h6,
+.murid h6 {
+    margin: 0px;
+    margin-top: 20px;
+    padding: 0px;
+    font-weight: 20px;
+    font-weight: bold;
+    font-size: 16px;
+    font-style: italic;
+}
+
+.murid span {
+   font-style: italic;
+}
+
+.murid h5 {
+    margin: 10px 0px 0px 0px;
+    padding: 0px;
+    font-size: 18px;
+}
+.support img{
+    width: 50px;
+}
+.support div ,
+.murid div{
+    text-align: center;
+    width: 26%;
+}
+section#gallery {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    overflow: hidden;
+    padding: 10px 0px 10px 0px;
+}
+section#gallery div {
+    padding: 10px;
+}
+section#gallery div img {
+    height: 100px;
+    border-radius: 5px;
+}
+section#gallery div img:hover{
+    transition: all 0.2 ease-in-out;
+    transform: scale(1.1) ;
+}
+section.quote {
+    background: url('asset/bg\ tkj.png') no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    font-style: italic;
+    padding: 100px;
+}
+section.quote .layar-dalam p {
+    display: inline;
+    background: url('asset/quote-icon.png')no-repeat;
+    padding: 40px;
+}
+.murid img {
+    width: 100%;
+    box-shadow: 0px 10px 30px #ccc;
+    border-radius: 5px;
+}
+
+.blog {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    grid-template-rows: repeat(4, auto);    
+    justify-items: center;
+}
+
+.blog .area {
+    display: flex; 
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    max-width: 320px;
+    height: 220px;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 10px 30px #ccc;
+    transition: transform 0.3s ease;
+}
+
+.blog .area:hover {
+    transform: scale(1.03);
+}
+
+.blog .area .gambar-scroll {
+    flex: 1;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.blog .area .text {
+    flex: 1.2;
+    padding: 15px;
+    text-align: left;
+}
+
+.blog .area .text article h4 {
+    margin: 0 0 5px 0;
+    font-size: 16px;
+}
+
+.blog .area .text article p {
+    margin: 0;
+    font-size: 13px;
+    color: #555;
+}
+
+.blog .area .text article a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+}
+.blog .area .text article a:hover {
+    color: #c86b85;
+}
+
+
+footer{
+    padding: 50px 0px 50px 0px;
+    background-color: #343a40;
+    color: #fff;
+}
+footer .layar-dalam {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+footer .layar-dalam div {
+    width: 20%;
+}
+footer .layar-dalam h5 {
+    margin-top: 0px;
+    font-size: 90%;
+    font-weight: bold;
+}
+footer .layar-dalam .copyright {
+    width: 100%;
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid #666;
+    text-align: center;
+}
+
+
+
+.quiz-container {
+    text-align: center;
+    background: #fff;
+    padding: 0px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    width: 100%;
+    
+  }
+
+  h1 {
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  .question {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .answers button {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background: #c86b85;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .answers button:hover {
+    background: #5e5c5c;
+  }
+
+  .next-btn, .restart-btn {
+    background: #f8e71c;
+    color: #000;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+
+  .next-btn:hover, .restart-btn:hover {
+    background: #ffe600;
+  }
+
+  .hide {
+    display: none;
+  }
+
+  .correct {
+    background-color: #4CAF50 !important;
+  }
+
+  .wrong {
+    background-color: #E74C3C !important;
+  }
+
+@media screen and (max-width: 991.98px){
+    .layar-dalam{
+        width: 90%;
+    }
+    nav .menu ul{
+        display: none;
+        margin-top: 60px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+    nav .menu ul li {
+        width: 100%;
+        border-bottom: 1px solid #ccc;
+        background-color: #fff;
+        line-height: 40px;
+    }
+    nav .menu ul li a {
+        color: #333;
+    }
+    .tombol-menu{
+        display: flex;
+    }
+    .blog .area {
+        display: block;
+    }
+    .blog div.area div{
+        width: 100%;
+    }
+    .blog .area .gambar-scroll {
+        border-radius: 5px 5px 0px 0px;
+        height: 200px;
+    }
+    .support {
+        display: block;
+    }
+    .support div {
+        width: 100%;
+        padding: 30px;
+    }
+    footer .layar-dalam {
+        flex-direction: column;
+    }
+    footer .layar-dalam div {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .blog {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    section#gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+    section#gallery div img {
+        height: 150px;
+    }
+    .murid {
+        flex-direction: column;
+    }
+    .murid div {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    header .intro h2 {
+        font-size: 150%;
+    }
+    header .intro h1 {
+        font-size: 120%;
+    }
+    section h3 {
+        font-size: 25px;
+    }
+    .question {
+        font-size: 18px;
+    }
+    .answers button {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 480px){
+    .blog {
+        grid-template-columns: 1fr;
+    }
+    nav .logo img {
+        width: 100px;
+    }
+    .tombol-menu {
+        width: 25px;
+        height: 18px;
+    }
+    .tombol-menu .garis {
+        height: 2.5px;
+    }
+    section {
+        padding: 30px 0px 30px 0px;
+    }
+    section.quote {
+        padding: 50px 20px;
+    }
+    section.quote .layar-dalam p {
+        padding: 20px;
+        font-size: 18px;
+    }
+    .quiz-container {
+        padding: 10px;
+    }
+    h1 {
+        font-size: 24px;
+    }
+    .question {
+        font-size: 16px;
+    }
+    .answers button {
+        font-size: 14px;
+        padding: 12px;
+    }
+    footer {
+        padding: 30px 0px 30px 0px;
+    }
+    footer .layar-dalam h5 {
+        font-size: 16px;
+    }
+}
+    </style>
+    <nav>
+        <div class="layar-dalam">
+            <div class="logo">
+                <a href=""><img src="asset/TKJ3_logo_no_bg.png" class="putih"/></a>
+                <a href=""><img src="asset/TKJ3_logo_black.png" class="hitam"/></a>
+            </div>
+            <div class="menu">
+                <a href="#" class="tombol-menu">
+                    <span class="garis"></span>
+                    <span class="garis"></span>
+                    <span class="garis"></span>
+                </a>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#kuis">Quiz</a></li>
+                    <li><a href="#aboutus">About Us</a></li>
+                    <li><a href="#support">Support</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#murid">Struktur Kelas</a></li>
+                    <li><a href="#siswa">Siswa</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="layar-penuh">
+        <header id="home">
+            <div class="overlay"></div>
+            <video autoplay muted loop>
+                <source src="asset/BACKGROUND TKJ.mp4" type="video/mp4"/>
+            </video>
+            
+            <div class="intro">
+                <h2>KELAS SEBELAS TKJ 3</h2>
+                <h1>SMK KARTANEGARA</h1>
+
+                <P>
+                    <a href="" class="tombol">MORE INFO</a>
+                </P>
+            </div>
+       </header>
+       <main>
+           <section id="kuis">
+            <div class="quiz-container">
+                <h1>Quiz Pengetahuan Umum</h1>
+                <div id="quiz">
+                  <div class="question" id="question">Pertanyaan muncul di sini</div>
+                  <div class="answers" id="answer-buttons"></div>
+                  <button id="next-btn" class="next-btn hide">Berikutnya</button>
+                  <button id="restart-btn" class="restart-btn hide">Coba Lagi</button>
+                </div>
+              </div>
+           </section>
+           <section id="aboutus">
+               <div class="layar-dalam">
+                   <h3>About Us</h3>
+                   <p class="ringkasan">
+                          Mengenal Lebih Dekat Kelas XI TKJ 3 SMK Kartanegara😎
+                   </p>
+                   <div class="konten-isi">
+                       <p>
+                          “kegagalan hanya bagian dari awalan,dan kesusksesan merupakan hasil yang di nantikan.”
+                       </p>
+                   </div>
+               </div>
+            </section>
+           <section class="abuabu" id="support">
+        <div class="layar-dalam support">
+            <div>
+                <img src="asset/matahari.png" />
+                <h6>In Every Condition</h6>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab eaque aut quae dolores officiis dignissimos?</p>
+            </div>
+            <div>
+                <img src="asset/tas.png" />
+                <h6>Profesional eam</h6>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus qui omnis et, nemo exercitationem sapiente.</p>
+            </div>
+            <div>
+                <img src="asset/kompas.png" />
+                <h6>Export Hikers</h6>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus qui omnis et, nemo exercitationem sapiente.</p>
+            </div>
+        </div>
+            </section>
+           <section id="gallery">
+               <div><img src="asset/galery.jpeg" alt=""></div>
+               <div><img src="asset/foto2.jpg" alt=""></div>
+               <div><img src="asset/foto3.jpg" alt=""></div>
+               <div><img src="asset/foto4.jpg" alt=""></div>
+               <div><img src="asset/foto5.jpg" alt=""></div>
+               <div><img src="asset/foto6.jpg" alt=""></div>
+               <div><img src="asset/foto7.jpg" alt=""></div>
+               <div><img src="asset/foto8.jpg" alt=""></div>
+           </section>
+           <section class="quote">
+            <div class="layar-dalam">
+                <p>Kami Belajar Menghubungkan Komputer, Tapi Sesungguhnya Kami Belajar Menghubungkan Hati.</p>
+            </div>
+           </section>
+           <section id="murid">
+               <div class="layar-dalam">
+                   <h3>Struktur Kelas</h3>
+                   <p class="ringkasan">Pengurus Kelas XI TKJ 3</p>
+                        <div class="murid">
+                        <div>
+                           <img src="asset/cahyo.jpeg" />
+                           <h6>Chandra Dwi Cahyono</h6>
+                           <span>Ds.Sumberagung</span>
+                           <h5>(Ketua Kelas)</h5>
+                           <h2></h2>
+
+  <!-- Ganti nomor di bawah dengan nomor kamu -->
+  <a href="https://wa.me/6285730140801" target="_blank" class="whatsapp-button">
+    Chat WhatsApp 📞
+  </a>
+                       </div>
+                        <div>
+                           <img src="asset/ndoko.jpeg" />
+                           <h6>Andhika Irawan S.</h6>
+                           <span>Ds.Jajar</span>
+                           <h5>(Wakil Ketua Kelas)</h5>
+                           <h2></h2>
+
+  <!-- Ganti nomor di bawah dengan nomor kamu -->
+  <a href="https://wa.me/6285784591808" target="_blank" class="whatsapp-button">
+    Chat WhatsApp 📞
+  </a>
+                       </div>
+                        <div>
+                           <img src="asset/neysita.jpeg" />
+                           <h6>Neysita Mentari D.</h6>
+                           <span>Ds.Purworejo</span>
+                           <h5>(Sekertaris 1)</h5>
+                           <h2></h2>
+
+  <!-- Ganti nomor di bawah dengan nomor kamu -->
+  <a href="https://wa.me/6285707194891" target="_blank" class="whatsapp-button">
+    Chat WhatsApp 📞
+  </a>
+                       </div>
+                       <div>
+                           <img src="asset/anggit.jpeg" />
+                           <h6>Anggit Handayani</h6>
+                           <span>Ds.Plaosan</span>
+                           <h5>(Sekertaris 2)</h5>
+                           <h2></h2>
+
+  <!-- Ganti nomor di bawah dengan nomor kamu -->
+  <a href="https://wa.me/628563735592" target="_blank" class="whatsapp-button">
+    Chat WhatsApp 📞
+  </a>
+                       </div>
+                       <div>
+                           <img src="asset/depita.jpeg" />
+                           <h6>Devita Hayyatul M.</h6>
+                           <span>Ds.Pranggang</span>
+                           <h5>(Bendahara 1)</h5>
+                           <h2></h2>
+
+  <!-- Ganti nomor di bawah dengan nomor kamu -->
+  <a href="https://wa.me/6285156734843" target="_blank" class="whatsapp-button">
+    Chat WhatsApp 📞
+  </a>
+                       </div>
+                       <div>
+                           <img src="asset/jihan.jpeg" />
+                           <h6>Jihan Permata Sari</h6>
+                           <span>Ds.Sugihwaras</span>
+                           <h5>(Bendahara 2)</h5>
+                           <h2></h2>
+
+  <!-- Ganti nomor di bawah dengan nomor kamu -->
+  <a href="https://wa.me/6285708201488" target="_blank" class="whatsapp-button">
+    Chat WhatsApp 📞
+  </a>
+                       </div>
+                    </div>
+                </div>
+           </section>
+           <section class="abuabu" id="siswa">
+                <div class="layar-dalam">
+                    <h2>Siswa TKJ 3</h2>
+                    <p class="ringkasan">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, iusto.</p>
+                    <div class="blog">
+                        <div class="area">
+                            <div class="gambar-scroll" style="background-image: url('asset/aini.jpeg');"></div>
+                            <div class="text">
+                                <article>
+                                    <h4><a href="#">Noraini</a></h4>
+                                    <p>jangan takut untuk mencoba, karena kegagalan adalah bagian dari proses menuju kesuksesan.</p>
+                                    <h2></h2>
+
+  <!-- Ganti nomor di bawah dengan nomor kamu -->
+  <a href="https://wa.me/6285855921976" target="_blank" class="whatsapp-button">
+    Chat WhatsApp 📞
+  </a>
+                                </article>
+                            </div>
+                        </div>
+                        <div class="area">
+                            <div class="gambar-scroll" style="background-image: url('asset/rara.jpeg');"></div>
+                            <div class="text">
+                                <article>
+                                    <h4><a href="#">Mutiara Fredella P.</a></h4>
+                                    <p>bagi dunia mungkin kamu satu orang, tapi bagi satu orang, kamu adalah dunianya, separuh hidupnya, dan rumahnya.</p>
+                                    <h2></h2>
+
+  <!-- Ganti nomor di bawah dengan nomor kamu -->
+  <a href="https://wa.me/6285735926171" target="_blank" class="whatsapp-button">
+    Chat WhatsApp 📞
+  </a>
+                                </article>
+                            </div>
+                        </div>
+                        <div class="area">
+                            <div class="gambar-scroll" style="background-image: url('asset/tiara.jpeg');"></div>
+                            <div class="text">
+                                <article>
+                                    <h4><a href="#">Mutiara Citra D.</a></h4>
+                                    <p>Kesuksesan adalah hasil dari kerja keras, ketekunan, dan belajar dari kegagalan.</p>
+                                    <h2></h2>
+
+  <!-- Ganti nomor di bawah dengan nomor kamu -->
+  <a href="https://wa.me/6285730472088" target="_blank" class="whatsapp-button">
+    Chat WhatsApp 📞
+  </a>
+                                </article>
+                            </div>
+                        </div>
+                        <div class="area">
+                            <div class="gambar-scroll" style="background-image: url('asset/kapin.jpeg');"></div>
+                            <div class="text">
+                                <article>
+                                    <h4><a href="#">M. Kafin Azka</a></h4>
+                                    <p>Jangan berhenti karena lelah, berhentilah karena sudah selesai.</p>
+                                    <h2></h2>
+
+  <!-- Ganti nomor di bawah dengan nomor kamu -->
+  <a href="https://wa.me/6289509977327" target="_blank" class="whatsapp-button">
+    Chat WhatsApp 📞
+  </a>
+                                </article>
+                            </div>
+                        </div>
+                        <div class="area">
+                            <div class="gambar-scroll" style="background-image: url('asset/akbar.jpeg');"></div>
+                            <div class="text">
+                                <article>
+                                    <h4><a href="#">Akbar Wahid W.</a></h4>
+                                    <p>terkadang manusia kurang bersyukur dalam hal memiliki hingga tak puas dengan apa yang di jalani</p>
+                                    <h2></h2>
+
+  <!-- Ganti nomor di bawah dengan nomor kamu -->
+  <a href="https://wa.me/6282146274342" target="_blank" class="whatsapp-button">
+    Chat WhatsApp 📞
+  </a>
+                                </article>
+                            </div>
+                        </div>
+                        <div class="area">
+                            <div class="gambar-scroll" style="background-image: url('asset/bagus.jpeg');"></div>
+                            <div class="text">
+                                <article>
+                                    <h4><a href="#">M. Bagus Saputra</a></h4>
+                                    <p>Wajar jika wajahku burik,karena mainku dibawah terik bukan di bawah gemerlap lampu diskotik.</p>
+                                    <h2></h2>
+
+  <!-- Ganti nomor di bawah dengan nomor kamu -->
+  <a href="https://wa.me/6285730140801" target="_blank" class="whatsapp-button">
+    Chat WhatsApp 📞
+  </a>
+                                </article>
+                            </div>
+                        </div>
+                        <div class="area">
+                            <div class="gambar-scroll" style="background-image: url('asset/itek.jpeg');"></div>
+                            <div class="text">
+                                <article>
+                                    <h4><a href="#">Rafi Ihsan R.</a></h4>
+                                    <p>Tiada hari tanpa ngopi.</p>
+                                    <h2></h2>
+
+  <!-- Ganti nomor di bawah dengan nomor kamu -->
+  <a href="https://wa.me/6285707162512" target="_blank" class="whatsapp-button">
+    Chat WhatsApp 📞
+  </a>
+                                </article>
+                            </div>
+                        </div>
+                        <div class="area">
+                            <div class="gambar-scroll" style="background-image: url('');"></div>
+                            <div class="text">
+                                <article>
+                                    <h4><a href="#">Ahmad Zaenal F.</a></h4>
+                                    <p>Tidak perlu kata kata yang penting bukti nyata</p>
+                                    <h2></h2>
+
+  <!-- Ganti nomor di bawah dengan nomor kamu -->
+  <a href="https://wa.me/6285707134870" target="_blank" class="whatsapp-button">
+    Chat WhatsApp 📞
+  </a>
+                                </article>
+                            </div>
+                        </div>
+                        <div class="area">
+                            <div class="gambar-scroll" style="background-image: url('asset/anggit.jpeg');"></div>
+                            <div class="text">
+                                <article>
+                                    <h4><a href="#">Anggit Handayani</a></h4>
+                                    <p>Tiada hari paling indah kecuali hari libur</p>
+                                    <h2></h2>
+
+  <!-- Ganti nomor di bawah dengan nomor kamu -->
+  <a href="https://wa.me/628563735592" target="_blank" class="whatsapp-button">
+    Chat WhatsApp 📞
+  </a>
+                                </article>
+                            </div>
+                        </div>
+                        <div class="area">
+                            <div class="gambar-scroll" style="background-image: url('asset/aril.jpeg');"></div>
+                            <div class="text">
+                                <article>
+                                    <h4><a href="#">Aril Riski A.</a></h4>
+                                    <p>Hari hari bahagia, bakal hampir gila</p>
+                                    <h2></h2>
+
+  <!-- Ganti nomor di bawah dengan nomor kamu -->
+  <a href="https://wa.me/62895391014987" target="_blank" class="whatsapp-button">
+    Chat WhatsApp 📞
+  </a>
+                                </article>
+                            </div>
+                        </div>
+                        <div class="area">
+                            <div class="gambar-scroll" style="background-image: url('asset/arvito.jpeg');"></div>
+                            <div class="text">
+                                <article>
+                                    <h4><a href="#">Arvito Orlen Y.</a></h4>
+                                    <p>Pria hebat bukan lah pria yang bisa meluluhkan hati para wanita,melainkan pria yang mampu menjaga hawa nafsu agar tidak ngcng</p>
+                                    <h2></h2>
+
+  <!-- Ganti nomor di bawah dengan nomor kamu -->
+  <a href="https://wa.me/6281336899820" target="_blank" class="whatsapp-button">
+    Chat WhatsApp 📞
+  </a>
+                                </article>
+                            </div>
+                        </div>
+                        <div class="area">
+                            <div class="gambar-scroll" style="background-image: url('asset/niko.jpeg');"></div>
+                            <div class="text">
+                                <article>
+                                    <h4><a href="#">Niko Fardian P.</a></h4>
+                                    <p>Cinta ditolak, Yakuza ku lawan dengan kalah telak</p>
+                                    <h2></h2>
+
+  <!-- Ganti nomor di bawah dengan nomor kamu -->
+  <a href="https://wa.me/6285730140801" target="_blank" class="whatsapp-button">
+    Chat WhatsApp 📞
+  </a>
+                                </article>
+                            </div>
+                        </div>
+                        <div class="area">
+                            <div class="gambar-scroll" style="background-image: url('asset/bebek.jpeg');"></div>
+                            <div class="text">
+                                <article>
+                                    <h4><a href="#">M. Rafi Kurniawan</a></h4>
+                                    <p>dua hal yang tidak akan berubah di dunia ini adalah arah kiblat dan hati ibumu.</p>
+                                    <h2></h2>
+
+  <!-- Ganti nomor di bawah dengan nomor kamu -->
+  <a href="https://wa.me/6285808234460" target="_blank" class="whatsapp-button">
+    Chat WhatsApp 📞
+  </a>
+                                </article>
+                            </div>
+                        </div>
+                        <div class="area">
+                            <div class="gambar-scroll" style="background-image: url('asset/belfa.jpg');"></div>
+                            <div class="text">
+                                <article>
+                                    <h4><a href="#">Afifah Belva A</a></h4>
+                                    <p>jangan menaruh manusia menjadi dunia mu, karna saat manusia itu menyakiti mu maka habislah dunia mu, taruhlah bahagia mu di dirimu sendiri</p>
+                                    <h2></h2>
+
+  <!-- Ganti nomor di bawah dengan nomor kamu -->
+  <a href="https://wa.me/6285784361507" target="_blank" class="whatsapp-button">
+    Chat WhatsApp 📞
+  </a>
+                                </article>
+                            </div>
+                        </div>
+                        <div class="area">
+                            <div class="gambar-scroll" style="background-image: url('asset/ceking.jpeg');"></div>
+                            <div class="text">
+                                <article>
+                                    <h4><a href="#">M. Risky Nur F</a></h4>
+                                    <p>dunia hanya sementara, jangan sia siakan hari harimu dengan maksiat.</p>
+                                    <h2></h2>
+
+  <!-- Ganti nomor di bawah dengan nomor kamu -->
+  <a href="https://wa.me/6285755060073" target="_blank" class="whatsapp-button">
+    Chat WhatsApp 📞
+  </a>
+                                </article>
+                            </div>
+                        </div>
+                        <div class="area">
+                            <div class="gambar-scroll" style="background-image: url('asset/cewek\ sendy.jpeg');"></div>
+                            <div class="text">
+                                <article>
+                                    <h4><a href="#">Luna Cindy Z.R</a></h4>
+                                    <p>Selalu istighfar, dan berdoa kepada sang pencipta</p>
+                                    <h2></h2>
+
+  <!-- Ganti nomor di bawah dengan nomor kamu -->
+  <a href="https://wa.me/6285812254245" target="_blank" class="whatsapp-button">
+    Chat WhatsApp 📞
+  </a>
+                                </article>
+                            </div>
+                        </div>
+                        <div class="area">
+                            <div class="gambar-scroll" style="background-image: url('asset/depita.jpeg');"></div>
+                            <div class="text">
+                                <article>
+                                    <h4><a href="#">Devita Hayatul M</a></h4>
+                                    <p>stay halal brother</p>
+                                    <h2></h2>
+
+  <!-- Ganti nomor di bawah dengan nomor kamu -->
+  <a href="https://wa.me/6285156734843" target="_blank" class="whatsapp-button">
+    Chat WhatsApp 📞
+  </a>
+                                </article>
+                            </div>
+                        </div>
+                        <div class="area">
+                            <div class="gambar-scroll" style="background-image: url('asset/deven.jpeg');"></div>
+                            <div class="text">
+                                <article>
+                                    <h4><a href="#">Deven Chkristian C</a></h4>
+                                    <p>Kesuksesan adalah hasil dari kerja keras, ketekunan, dan belajar dari kegagalan.</p>
+                                    <h2></h2>
+
+  <!-- Ganti nomor di bawah dengan nomor kamu -->
+  <a href="https://wa.me/6287885803717" target="_blank" class="whatsapp-button">
+    Chat WhatsApp 📞
+  </a>
+                                </article>
+                            </div>
+                        </div>
+                        <div class="area">
+                            <div class="gambar-scroll" style="background-image: url('asset/huda.jpeg');"></div>
+                            <div class="text">
+                                <article>
+                                    <h4><a href="#">Khoirul Huda</a></h4>
+                                    <p>TETAPLAH MELAWAN ARUS KARENA HANYA IKAN MATI DAN SAMPAH YANG MENGIKUTI ARUS</p>
+                                    <h2></h2>
+
+  <!-- Ganti nomor di bawah dengan nomor kamu -->
+  <a href="https://wa.me/6285856396814" target="_blank" class="whatsapp-button">
+    Chat WhatsApp 📞
+  </a>
+                                </article>
+                            </div>
+                        </div>
+                        <div class="area">
+                            <div class="gambar-scroll" style="background-image: url('asset/indra.jpeg');"></div>
+                            <div class="text">
+                                <article>
+                                    <h4><a href="#">Indra Santosa</a></h4>
+                                    <p>Tetap merendah karena diatas langit masih ada lagit</p>
+                                    <h2></h2>
+
+  <!-- Ganti nomor di bawah dengan nomor kamu -->
+  <a href="https://wa.me/6285815302551" target="_blank" class="whatsapp-button">
+    Chat WhatsApp 📞
+  </a>
+                                </article>
+                            </div>
+                        </div>
+                        <div class="area">
+                            <div class="gambar-scroll" style="background-image: url('asset/jihan.jpeg');"></div>
+                            <div class="text">
+                                <article>
+                                    <h4><a href="#">Jihan Permata Sari</a></h4>
+                                    <p>Kemampuan yang harus diasah untuk mencapai potensinya</p>
+                                    <h2></h2>
+
+  <!-- Ganti nomor di bawah dengan nomor kamu -->
+  <a href="https://wa.me/6285708201488" target="_blank" class="whatsapp-button">
+    Chat WhatsApp 📞
+  </a>
+                                </article>
+                            </div>
+                        </div>
+                        <div class="area">
+                            <div class="gambar-scroll" style="background-image: url('asset/kepin.jpeg');"></div>
+                            <div class="text">
+                                <article>
+                                    <h4><a href="#">Kevin Aziz S</a></h4>
+                                    <p>Kebulatan hati untuk mencapai tujuan</p>
+                                    <h2></h2>
+
+  <!-- Ganti nomor di bawah dengan nomor kamu -->
+  <a href="https://wa.me/6285706664725" target="_blank" class="whatsapp-button">
+    Chat WhatsApp 📞
+  </a>
+                                </article>
+                            </div>
+                        </div>
+                        <div class="area">
+                            <div class="gambar-scroll" style="background-image: url('asset/koyok.jpeg');"></div>
+                            <div class="text">
+                                <article>
+                                    <h4><a href="#">Satriyo Herangga</a></h4>
+                                    <p>Tidak ada yang lebih indah dari senyumanmu</p>
+                                    <h2></h2>
+
+  <!-- Ganti nomor di bawah dengan nomor kamu -->
+  <a href="https://wa.me/6285852078212" target="_blank" class="whatsapp-button">
+    Chat WhatsApp 📞
+  </a>
+                                </article>
+                            </div>
+                        </div>
+                        <div class="area">
+                            <div class="gambar-scroll" style="background-image: url('asset/marchel.jpeg');"></div>
+                            <div class="text">
+                                <article>
+                                    <h4><a href="#">M. marchel rizky A.</a></h4>
+                                    <p>Kegagalan bukan akhir dari sebuah perjuangan</p>
+                                    <h2></h2>
+
+  <!-- Ganti nomor di bawah dengan nomor kamu -->
+  <a href="https://wa.me/6285731888368" target="_blank" class="whatsapp-button">
+    Chat WhatsApp 📞
+  </a>
+                                </article>
+                            </div>
+                        </div>
+                        <div class="area">
+                            <div class="gambar-scroll" style="background-image: url('asset/marsa.jpeg');"></div>
+                            <div class="text">
+                                <article>
+                                    <h4><a href="#">Marsa ayu dina S.</a></h4>
+                                    <p>Memperjuangkan yang perlu di perjuangkan</p>
+                                    <h2></h2>
+
+  <!-- Ganti nomor di bawah dengan nomor kamu -->
+  <a href="https://wa.me/6281553505491" target="_blank" class="whatsapp-button">
+    Chat WhatsApp 📞
+  </a>
+                                </article>
+                            </div>
+                        </div>
+                        <div class="area">
+                            <div class="gambar-scroll" style="background-image: url('asset/memet.jpeg');"></div>
+                            <div class="text">
+                                <article>
+                                    <h4><a href="#">Aprian nanda P.A</a></h4>
+                                    <p>Walaupun hari hari mengecewakan namun harus tetap senang</p>
+                                    <h2></h2>
+
+  <!-- Ganti nomor di bawah dengan nomor kamu -->
+  <a href="https://wa.me/6285812422658" target="_blank" class="whatsapp-button">
+    Chat WhatsApp 📞
+  </a>
+                                </article>
+                            </div>
+                        </div>
+                        <div class="area">
+                            <div class="gambar-scroll" style="background-image: url('asset/neysita.jpeg');"></div>
+                            <div class="text">
+                                <article>
+                                    <h4><a href="#">Neysita Mentari D.</a></h4>
+                                    <p>Dunia pasti ada akhirnya</p>
+                                    <h2></h2>
+
+  <!-- Ganti nomor di bawah dengan nomor kamu -->
+  <a href="https://wa.me/6285707194891" target="_blank" class="whatsapp-button">
+    Chat WhatsApp 📞
+  </a>
+                                </article>
+                            </div>
+                        </div>
+                        <div class="area">
+                            <div class="gambar-scroll" style="background-image: url('asset/nico.jpeg');"></div>
+                            <div class="text">
+                                <article>
+                                    <h4><a href="#">Nico Dwi S.</a></h4>
+                                    <p>Tetap rendah hati di era kesombongan ini</p>
+                                    <h2></h2>
+
+  <!-- Ganti nomor di bawah dengan nomor kamu -->
+  <a href="https://wa.me/6285607880824" target="_blank" class="whatsapp-button">
+    Chat WhatsApp 📞
+  </a>
+                                </article>
+                            </div>
+                        </div>
+                        <div class="area">
+                            <div class="gambar-scroll" style="background-image: url('asset/paris.jpeg');"></div>
+                            <div class="text">
+                                <article>
+                                    <h4><a href="#">Fhariz Tribagus A.S</a></h4>
+                                    <p>Calamus gladio fortior. (Pena lebih kuat daripada pedang.)</p>
+                                    <h2></h2>
+
+  <!-- Ganti nomor di bawah dengan nomor kamu -->
+  <a href="https://wa.me/6281555461321" target="_blank" class="whatsapp-button">
+    Chat WhatsApp 📞
+  </a>
+                                </article>
+                            </div>
+                        </div>
+                        <div class="area">
+                            <div class="gambar-scroll" style="background-image: url('asset/sifa.jpeg');"></div>
+                            <div class="text">
+                                <article>
+                                    <h4><a href="#">M. Syifa P.</a></h4>
+                                    <p>Kegagalan memang kesempatan untuk belajar dan tumbuh, bukan untuk menyerah</p>
+                                    <h2></h2>
+
+  <!-- Ganti nomor di bawah dengan nomor kamu -->
+  <a href="https://wa.me/6285785470375" target="_blank" class="whatsapp-button">
+    Chat WhatsApp 📞
+  </a>
+                                </article>
+                            </div>
+                        </div>
+                        <div class="area">
+                            <div class="gambar-scroll" style="background-image: url('asset/rara.jpeg');"></div>
+                            <div class="text">
+                                <article>
+                                    <h4><a href="#">Mutiara Fredella P.</a></h4>
+                                    <p>Tiada masa paling indah, masa-masa di sekolah</p>
+                                    <h2></h2>
+
+  <!-- Ganti nomor di bawah dengan nomor kamu -->
+  <a href="https://wa.me/6285735926171" target="_blank" class="whatsapp-button">
+    Chat WhatsApp 📞
+  </a>
+                                </article>
+                            </div>
+                        </div>
+                        <div class="area">
+                            <div class="gambar-scroll" style="background-image: url('asset/sendy.jpeg');"></div>
+                            <div class="text">
+                                <article>
+                                    <h4><a href="#">Sendy Kurniawan P.</a></h4>
+                                    <p>Remember Allah at all the time</p>
+                                    <h2></h2>
+
+  <!-- Ganti nomor di bawah dengan nomor kamu -->
+  <a href="https://wa.me/628155944689" target="_blank" class="whatsapp-button">
+    Chat WhatsApp 📞
+  </a>
+                                </article>
+                            </div>
+                        </div>
+                        <div class="area">
+                            <div class="gambar-scroll" style="background-image: url('asset/siti.jpeg');"></div>
+                            <div class="text">
+                                <article>
+                                    <h4><a href="#">Siti Anggun</a></h4>
+                                    <p>dipaksa terpaksa terbiasa
+                                        أجبر على التعود على ذلك
+                                    </p>
+                                    <h2></h2>
+
+  <!-- Ganti nomor di bawah dengan nomor kamu -->
+  <a href="https://wa.me/6285732222761" target="_blank" class="whatsapp-button">
+    Chat WhatsApp 📞
+  </a>
+                                </article>
+                            </div>
+                        </div>
+                        <div class="area">
+                            <div class="gambar-scroll" style="background-image: url('asset/mawar.jpg');"></div>
+                            <div class="text">
+                                <article>
+                                    <h4><a href="#">Mawar Sari</a></h4>
+                                    <p>tidak ada jalan pintas menuju sukses,hanya kerja keras dan doa yang tidak pernah putus.</p>
+                                    <h2></h2>
+
+  <!-- Ganti nomor di bawah dengan nomor kamu -->
+  <a href="https://wa.me/6283833536449" target="_blank" class="whatsapp-button">
+    Chat WhatsApp 📞
+  </a>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+           </section>
+        </main>
+        <footer id="contact">
+          <div class="layar-dalam">
+            <div>
+                <h5>Info</h5>
+                XI TKJ 3 adalah kelas jurusan Teknik Komputer dan Jaringan di SMK Kartanegara. 
+                Kami berfokus pada pengembangan keterampilan jaringan, teknologi informasi, dan etika profesional.
+            </div>
+            <div>
+                <h5>Contact</h5>
+                SMK Kartanegara<br>
+                Jl. Wates Kabupaten Kediri<br>
+                Email: <a href="mailto:sebel4stekaje3@gmail.com">sebel4stekaje3@gmail.com</a><br>
+                Instagram: <a href="https://www.instagram.com/_xi.tjkthree?igsh=MXQwNWp3Zmg4dmc3MA==" target="_blank">@_xi.tkjthree</a>
+            </div>
+            <div>
+                <h5>Help</h5>
+                Jika kamu mengalami kendala mengakses website, 
+                silakan hubungi admin kelas XI TKJ 3 atau guru pembimbing.  
+                Panduan penggunaan website tersedia di menu "contact".
+            </div>
+            <div>
+                <h5>Sitemap</h5>
+                 <p>
+                    <a href="#home">Home</a><br>
+                    <a href="#about">About Us</a><br>
+                    <a href="#gallery">Gallery</a><br>
+                    <a href="#siswa">Siswa TKJ 3</a><br>
+                    <a href="#contact">Contact</a>
+                </p>
+            </div>
+          </div>
+          <div class="layar-dalam">
+              <div class="copyright">
+                  &copy; 2025 XI TKJ 3 SMK KARTANEGARA
+              </div>
+          </div>
+        </footer>
+        </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        
+        //menu
+var tombolmenu = $(".tombol-menu");
+var menu = $("nav .menu ul");
+
+function klikMenu() {
+    tombolmenu.click(function() {
+        menu.toggle();
+    });
+    menu.click(function(){
+        menu.toggle();
+    });
+}
+$(document).ready(function () {
+    var width = $(window).width();
+    if(width < 990) {
+        klikMenu();
+    }
+});
+//check lebar
+$(window).resize(function() {
+    var width = $(window).width();
+    if(width > 989) {
+        menu.css("display", "block");
+        //display:block
+    }else{
+        menu.css("display", "none");
+        }
+        klikMenu();
+});
+
+//efek scroll
+$(document).ready(function (){
+    var scroll_pos = 0;
+    $(document).scroll(function () {
+        scroll_pos =$(this).scrollTop();
+        if (scroll_pos > 0) {
+            $("nav").addClass("putih");
+            $("nav img.hitam").show();
+            $("nav img.putih").hide();
+        } else {
+            $("nav").removeClass("putih");
+            $("nav img.hitam").hide();
+            $("nav img.putih").show();
+        }
+    })
+})
+
+const questions = [
+    {
+      question: "Bentuk negara Indonesia adalah?",
+      answers: [
+        { text: "Republik", correct: true },
+        { text: "Monarki", correct: false },
+        { text: "Federasi", correct: false },
+        { text: "Koloni", correct: false }
+      ]
+    },
+    {
+      question: "Pancasila sebagai dasar negara berarti!",
+      answers: [
+        { text: "Hanya digunakan saat upacara", correct: false },
+        { text: "Pedoman dalam menyusun UUD", correct: true },
+        { text: "Di ganti setiap pergantian presiden", correct: false },
+        { text: "Tidak ada berkaitan dengan kehidupan bernegara", correct: false }
+      ]
+    },
+    {
+      question: "Pemilihan umum di indonesia di laksanakan setiap?",
+      answers: [
+        { text: "2 tahun sekali", correct: false },
+        { text: "10 tahun sekali", correct: false },
+        { text: "5 tahun sekali", correct: true },
+        { text: "1 bulan sekali", correct: false }
+      ]
+    },
+    {
+      question: "Gunung tertinggi di dunia adalah?",
+      answers: [
+        { text: "Kilimanjaro", correct: false },
+        { text: "Elbrus", correct: false },
+        { text: "Everest", correct: true },
+        { text: "Semeru", correct: false }
+      ]
+    },
+    {
+      question: "Bendera Indonesia memiliki warna?",
+      answers: [
+        { text: "Merah dan Putih", correct: true },
+        { text: "Biru dan Putih", correct: false },
+        { text: "Merah dan Kuning", correct: false },
+        { text: "Hijau dan Putih", correct: false }
+      ]
+    },
+    {
+      question: "Sikap menghargai orang lain mencerminkan nilai?",
+      answers: [
+        { text: "Persatuan", correct: false },
+        { text: "Keadlian Sosial", correct: false },
+        { text: "Kemanusiaan", correct: true },
+        { text: "Ketuhanan", correct: false }
+      ]
+    },
+    {
+      question: "Salah satu kewajiban warga Indonesia adalah",
+      answers: [
+        { text: "Mengajak perang negara sebelah", correct: false },
+        { text: "Menghindari peraturan", correct: false },
+        { text: "Menutup hak tanpa batas", correct: false },
+        { text: "Membayar pajak dengan jujur", correct: true }
+      ]
+    },
+  ];
+
+  const questionElement = document.getElementById("question");
+  const answerButtons = document.getElementById("answer-buttons");
+  const nextButton = document.getElementById("next-btn");
+  const restartButton = document.getElementById("restart-btn");
+
+  let currentQuestionIndex = 0;
+  let score = 0;
+
+  function startQuiz() {
+    currentQuestionIndex = 0;
+    score = 0;
+    nextButton.classList.add("hide");
+    restartButton.classList.add("hide");
+    showQuestion();
+  }
+
+  function showQuestion() {
+    resetState();
+    let currentQuestion = questions[currentQuestionIndex];
+    questionElement.textContent = currentQuestion.question;
+
+    currentQuestion.answers.forEach(answer => {
+      const button = document.createElement("button");
+      button.textContent = answer.text;
+      button.classList.add("btn");
+      if (answer.correct) {
+        button.dataset.correct = answer.correct;
+      }
+      button.addEventListener("click", selectAnswer);
+      answerButtons.appendChild(button);
+    });
+  }
+
+  function resetState() {
+    nextButton.classList.add("hide");
+    while (answerButtons.firstChild) {
+      answerButtons.removeChild(answerButtons.firstChild);
+    }
+  }
+
+  function selectAnswer(e) {
+    const selectedButton = e.target;
+    const correct = selectedButton.dataset.correct === "true";
+    if (correct) {
+      selectedButton.classList.add("correct");
+      score++;
+    } else {
+      selectedButton.classList.add("wrong");
+    }
+
+    Array.from(answerButtons.children).forEach(button => {
+      if (button.dataset.correct === "true") {
+        button.classList.add("correct");
+      }
+      button.disabled = true;
+    });
+
+    nextButton.classList.remove("hide");
+  }
+
+  function showScore() {
+    resetState();
+    questionElement.textContent = `Kamu mendapatkan ${score} dari ${questions.length} pertanyaan!`;
+    restartButton.classList.remove("hide");
+  }
+
+  function handleNextButton() {
+    currentQuestionIndex++;
+    if (currentQuestionIndex < questions.length) {
+      showQuestion();
+    } else {
+      showScore();
+    }
+  }
+
+  nextButton.addEventListener("click", handleNextButton);
+  restartButton.addEventListener("click", startQuiz);
+
+  startQuiz();
+    </script>
+</body>
+</html>
